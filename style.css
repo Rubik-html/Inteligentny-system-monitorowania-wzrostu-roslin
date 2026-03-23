@@ -1,0 +1,120 @@
+* {
+    padding: 0px;
+    color: black;
+}
+html body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+}
+
+nav {
+    text-align: center;
+    height: 50px;
+    background-color:  rgba(6, 223, 122, 0.637);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.nawigacja {
+    font-size: 25px;
+    font-weight:bold;
+    padding: 10px;
+    margin: 50px;
+    background-color: lightgray;
+    border-radius: 10px;
+}
+.nawigacja:hover {
+    background-color: rgba(6, 223, 122, 0.637);
+    color: white;
+    border: 3px solid yellow;
+}
+
+section{
+    display: none;
+    text-align: center;
+    ul, li {
+        font-size: 25px;
+        padding: 1px;
+    }
+}
+section:target {
+    display: block;
+    flex-grow: 1;
+}
+
+header {
+    display: none;
+    text-align: center;
+    font-size: 20px;
+    p {
+        font-size: 40px;
+    }
+}
+
+header:target {
+    display: block;
+    flex-grow: 1;
+}
+
+#strona, #informacje, #dane, #temperatura, #wilgotnosc, #oswietlenie{
+    background-image: url(image/Tlo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#informacje h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+#strona h1, #dane h1, #temperatura h1, #wilgotnosc h1, #oswietlenie h1{
+    text-align: center;
+    font-size: 60px;
+}
+
+.ikona {
+    position: relative;
+    margin-left: 10%;
+    margin-right: 10%;    
+}
+
+#wykres_tem, #wykres_wil, #wykres_osw {
+    max-width: 700px;
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.p_tem-wil, .p_wil-osw, .p_osw-tem {
+    background-color: lightgreen;
+    padding: 20px;
+    height: 20px;
+    width: 300px;
+    margin-left: 21.3%;
+    margin-right: 21.3%;
+    
+}
+
+.p_tem-osw, .p_wil-tem, .p_osw-wil {
+    background-color: lightgreen;
+    padding: 20px;
+    height: 20px;
+    width: 300px;
+    margin-left: 21.3%;
+    margin-right: 21.3%;
+}
+
+footer{
+    background-color:  rgba(6, 223, 122, 0.637);
+    height: 25px;
+    clear: both;
+}

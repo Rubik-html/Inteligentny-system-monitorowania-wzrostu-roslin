@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title> Projekt  </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <nav>
+        <a href="#strona"  class="nawigacja Strona_G">Strona Główna </a>
+        <a href="#informacje" class="nawigacja">Informacje szczególowe</a>
+        <a href="#dane" class="nawigacja">Dane</a>
+    </nav>
+    
+    <header  id="strona" class="Strona_G">
+        <main> 
+            <h1> Inteligentny system monitorowania wzrostu roślin  </h1>
+            <p> System automatycznie monitoruje warunki środowiskowe i dostosowuje podlewanie <br>
+                roślin w czasie rzeczywistym. Dzięki zastosowaniu czujników oraz komunikacji MQTT<br>
+                możliwe jest zdalne zarządzanie i kontrola parametrów z dowolnego urządzenia.
+                <br>
+                Projekt łączy elektronikę, programowanie i nowoczesne podejście do oszczędzania zasobów, oferując rozwiązanie gotowe do dalszego rozwoju w kierunku sztucznej<br>
+                inteligencji.
+            </p>
+            
+        </main>
+    </header>
+
+    <section id="informacje">
+        
+          <h2>Funkcjonalności systemu:</h2>
+            <ul>
+                <li> pomiar wilgotności gleby </li>
+                <li> pomiar temperatury otoczenia </li>
+                <li> pomiar natężenia światła </li>
+                <li> automatyczne sterowanie podlewaniem </li>
+                <li> przesyła danych przez MQTT </li>
+                <li> zdalny dostęp do danych </li>
+                <li> interfejs webowy do monitorowania i obsługi </li>
+            </ul>
+
+            <h2> Technologie: </h2>
+            <ul>
+                <li> ESP32 </li>
+                <li> Arduino IDE </li>
+                <li> MQTT </li>
+                <li> HTML/CSS/JavaScript</li>
+            </ul>
+
+            <h2> Możliwości rozwoju: </h2>
+            <ul>
+                <li> implementacja algorytmów uczenia maszynowego </li>
+                <li> analiza danych historycznych </li>
+                <li> personalizacja pod konkretne gatunki roślin </li>
+                <li> optymalizacja zużycia wody </li>
+            </ul>
+    </section>
+
+    <section id="dane">
+        <h1>Dane</h1>
+        <a href="#temperatura" class="ikona"><img src="image/Temperatura.png" alt="ikona temperatury"> </a>
+        <a href="#wilgotnosc" class="ikona"><img src="image/Wilgotnosc .png" alt="ikona wilgotności"> </a>
+        <a href="#oswietlenie" class="ikona"> <img src="image/Oswietlenie.png" alt="ikona oświetlenia"> </a>
+    </section>
+
+    <section id="temperatura">
+        <h1> Temperatura: <span id="temp">--</span></h1>
+        <div id="wykres_tem"> </div>
+        <a href="#oswietlenie" class="p_tem-osw"> <= oświetlenia</a>
+        <a href="#wilgotnosc" class="p_tem-wil"> wilgotność => </a>
+    </section>
+
+    <section id="wilgotnosc">
+        <h1> Wilgotność: <span id="wilg">--</span> </h1>
+        <div id="wykres_wil"></div>
+        <a href="#temperatura" class="p_wil-tem"> <= temperatura </a>
+        <a href="#oswietlenie" class="p_wil-osw">oświetlenie => </a>
+    </section>
+
+    <section id="oswietlenie">
+       <h1> Oświetlenie: <span id="light">--</span></h1>
+        <div id="wykres_osw"></div>
+        <a href="#wilgotnosc" class="p_osw-wil"> <= wilgotność </a>
+        <a href="#temperatura" class="p_osw-tem"> temperatura => </a>
+    </section>
+
+
+
+    <footer>
+
+    </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+<script src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>
+<script src="skrypty.js"></script>
+
+</body>
+</html>
