@@ -56,22 +56,24 @@ function inicjalizujWykresy() {
 // --- 4. MQTT CONFIG ---
 var client = new Paho.MQTT.Client(
     "broker.hivemq.com",
-    8000,
+    8884,
+    "/mqtt",
     "webClient_" + Math.floor(Math.random() * 1000)
 );
 
 client.onMessageArrived = onMessageArrived;
 
 client.connect({
+    useSSL: true,
     onSuccess: () => {
         console.log("Połączono!");
         client.subscribe("plant/data");
-
-        // Rysujemy wykresy z zapisanych danych
         inicjalizujWykresy();
+    },
+    onFailure: (err) => {
+        console.error("Błąd:", err);
     }
 });
-
 // --- 5. ODBIÓR DANYCH ---
 function onMessageArrived(message) {
     try {
